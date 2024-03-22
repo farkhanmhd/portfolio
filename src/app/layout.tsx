@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./styles.css";
 import "../../public/font/stylesheet.css";
-import Header from "./components/ui/Header/Header";
-import Contact from "./components/ui/Contact/Contact";
-import Footer from "./components/ui/Footer/Footer";
+import Header from "./components/Header";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Farkhan's Portfolio",
@@ -21,7 +21,6 @@ export default function RootLayout({
       <body className="bg-black text-white antialiased">
         <Header />
         {children}
-        <Contact />
         <Footer />
       </body>
     </html>

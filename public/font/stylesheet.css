@@ -10,60 +10,6 @@
 }
 
 @font-face {
-  font-family: "neue_montrealbold_italic";
-  src:
-    url("neuemontreal-bolditalic-webfont.woff2") format("woff2"),
-    url("neuemontreal-bolditalic-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "neue_montrealitalic";
-  src:
-    url("neuemontreal-italic-webfont.woff2") format("woff2"),
-    url("neuemontreal-italic-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "neue_montreallight";
-  src:
-    url("neuemontreal-light-webfont.woff2") format("woff2"),
-    url("neuemontreal-light-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "neue_montreallight_italic";
-  src:
-    url("neuemontreal-lightitalic-webfont.woff2") format("woff2"),
-    url("neuemontreal-lightitalic-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "neue_montrealmedium";
-  src:
-    url("neuemontreal-medium-webfont.woff2") format("woff2"),
-    url("neuemontreal-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "neue_montrealmedium_italic";
-  src:
-    url("neuemontreal-mediumitalic-webfont.woff2") format("woff2"),
-    url("neuemontreal-mediumitalic-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "neue_montrealregular";
   src:
     url("neuemontreal-regular-webfont.woff2") format("woff2"),
