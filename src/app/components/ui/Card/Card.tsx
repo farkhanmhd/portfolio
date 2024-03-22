@@ -28,8 +28,8 @@ const ProjectCard = ({
           alt={project.title}
         />
       </Link>
-      <div className="pointer-events-none absolute inset-0 h-full w-full bg-black opacity-0 group-hover/product:opacity-50"></div>
-      <h2 className="absolute bottom-4 left-4 text-white opacity-0 group-hover/product:opacity-100">
+      <div className="pointer-events-none absolute inset-0 h-full w-full bg-black opacity-0 duration-200 group-hover/product:opacity-50"></div>
+      <h2 className="absolute bottom-4 left-4 text-3xl text-white opacity-0 group-hover/product:opacity-100">
         {project.title}
       </h2>
     </li>

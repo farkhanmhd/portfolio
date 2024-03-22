@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import ProjectCard from "../Card/Card";
-import isElementInViewport from "@/app/utils/isElementInViewPort";
+import { isElementInViewport } from "@/app/utils/utils";
 
 export default function Projects() {
   const projectRef = useRef<any>(null);
@@ -41,16 +41,18 @@ export default function Projects() {
 
   return (
     <div
-      className="min-h-screen w-screen pb-10 opacity-0 duration-[1500ms]"
+      className="projects-bg relative min-h-screen w-screen pb-10 opacity-0 duration-[1500ms]"
       id="projects"
       ref={projectRef}
     >
-      <ProjectHeader />
-      <ul className="mx-auto flex w-[80%] flex-wrap justify-center gap-10">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
-        ))}
-      </ul>
+      <div id="project-content" className="z-[990]">
+        <ProjectHeader />
+        <ul className="mx-auto flex w-[80%] flex-wrap justify-center gap-10">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

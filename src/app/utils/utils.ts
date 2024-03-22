@@ -6,4 +6,9 @@ function isElementInViewport(el: HTMLElement) {
   );
 }
 
-export default isElementInViewport;
+function isElementAtTop(el: HTMLElement) {
+  const rect = el.getBoundingClientRect();
+  return rect.top <= 0 && window.scrollY === 0;
+}
+
+export { isElementInViewport, isElementAtTop };

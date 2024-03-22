@@ -4,7 +4,7 @@ import { SparklesCore } from "../sparkles/Sparkles";
 
 export default function Hero() {
   return (
-    <div className="flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-black px-10 uppercase">
+    <div className="hero-bg flex h-screen w-screen flex-col items-center justify-center overflow-hidden px-10 uppercase">
       <h1 className="relative z-20 mb-4 text-center text-3xl font-bold text-white md:text-5xl lg:text-8xl">
         {`Hi, I'm Farkhan,`}
       </h1>
