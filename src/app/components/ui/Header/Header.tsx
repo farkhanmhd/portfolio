@@ -59,16 +59,21 @@ export default function Header() {
         id="header-item-container"
         className="mx-auto flex w-[80%] items-center justify-between py-8"
       >
-        <div id="logo" className="hidden rounded-lg bg-white p-2 md:block">
+        <div id="logo" className="hidden md:block">
           <h3 className="text-xl font-extrabold text-black">
-            <Link href="/">FM</Link>
+            <Link href="/" className="block rounded-lg bg-white p-2">
+              FM
+            </Link>
           </h3>
         </div>
         <nav className="w-full md:w-auto">
           <ul className="flex justify-between gap-x-10 text-xl">
             {navItems.map((navItem: { href: string; textContent: string }) => (
               <li key={navItem.textContent}>
-                <Link href={navItem.href}>
+                <Link
+                  href={navItem.href}
+                  className="duration-200 hover:text-blue-500"
+                >
                   {navItem.textContent.toUpperCase()}
                 </Link>
               </li>
