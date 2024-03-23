@@ -1,86 +1,52 @@
 "use client";
-
-import React, { useEffect, useRef } from "react";
-import Link from "next/link";
-import { isElementAtTop } from "@/app/utils/utils";
-
+import React from "react";
+import { FloatingNav } from "./ui/FloatingNavbar";
+import { RxCode } from "react-icons/rx";
+import { TbHome, TbMessage, TbUser } from "react-icons/tb";
+import { usePathname } from "next/navigation";
 export default function Header() {
-  const headerRef = useRef<any>(null);
-  useEffect(() => {
-    let lastScrollTop = 0;
-    const header = headerRef.current;
-
-    setTimeout(() => {
-      header.classList.replace("-top-32", "top-0");
-    }, 0);
-
-    window.addEventListener("scroll", function () {
-      if (isElementAtTop(header)) {
-        header.classList.replace("bg-black/70", "bg-black/0");
-      } else {
-        header.classList.replace("bg-black/0", "bg-black/70");
-      }
-
-      const currentScrollTop = window.scrollY;
-      if (currentScrollTop > lastScrollTop) {
-        header.classList.replace("top-0", "-top-32");
-      } else {
-        header.classList.replace("-top-32", "top-0");
-      }
-
-      lastScrollTop = currentScrollTop;
-
-      return () => {
-        window.removeEventListener("scroll", function () {});
-      };
-    });
-  }, []);
-
-  const navItems: { href: string; textContent: string }[] = [
+  const pathname = usePathname();
+  const navItems = [
     {
-      href: "/about",
-      textContent: "About",
+      name: "Home",
+      link: "/",
+      icon: (
+        <TbHome
+          className={`h-4 w-4 ${pathname === "/" ? "text-blue-500" : "text-white"}`}
+        />
+      ),
     },
     {
-      href: "/projects",
-      textContent: "Projects",
+      name: "About",
+      link: "/about",
+      icon: (
+        <TbUser
+          className={`h-4 w-4 ${pathname === "/about" ? "text-blue-500" : "text-white"}`}
+        />
+      ),
     },
     {
-      href: "/contact",
-      textContent: "Contact",
+      name: "Projects",
+      link: "/projects",
+      icon: (
+        <RxCode
+          className={`h-4 w-4 ${pathname === "/projects" ? "text-blue-500" : "text-white"}`}
+        />
+      ),
+    },
+    {
+      name: "Contact",
+      link: "/contact",
+      icon: (
+        <TbMessage
+          className={`h-4 w-4 ${pathname === "/contact" ? "text-blue-500" : "text-white"}`}
+        />
+      ),
     },
   ];
   return (
-    <header
-      className="fixed -top-32 z-[999] w-screen bg-black/0 backdrop-blur-md duration-500"
-      ref={headerRef}
-    >
-      <div
-        id="header-item-container"
-        className="mx-auto flex w-[80%] items-center justify-between py-8"
-      >
-        <div id="logo" className="hidden md:block">
-          <h3 className="text-xl font-extrabold text-black">
-            <Link href="/" className="block rounded-lg bg-white p-2">
-              FM
-            </Link>
-          </h3>
-        </div>
-        <nav className="w-full md:w-auto">
-          <ul className="flex justify-between gap-x-10 text-xl">
-            {navItems.map((navItem: { href: string; textContent: string }) => (
-              <li key={navItem.textContent}>
-                <Link
-                  href={navItem.href}
-                  className="duration-200 hover:text-blue-500"
-                >
-                  {navItem.textContent.toUpperCase()}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div className="relative  w-full">
+      <FloatingNav navItems={navItems} />
+    </div>
   );
 }

@@ -42,7 +42,7 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="contact-bg relative flex h-screen w-screen flex-col items-center justify-center gap-y-20  px-10 py-24 text-white opacity-0 duration-[2500ms] lg:py-52"
+      className="contact-bg projects-bg relative flex h-screen w-screen flex-col items-center justify-center  gap-y-20 px-10 py-24 text-white opacity-0 duration-[2000ms] lg:py-52"
       ref={contactRef}
     >
       <h2 className=" text-center text-3xl font-extralight uppercase md:text-5xl lg:text-7xl">

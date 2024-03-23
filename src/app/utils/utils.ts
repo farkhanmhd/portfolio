@@ -9,9 +9,4 @@ function isElementInViewport(el: HTMLElement | null) {
   return false;
 }
 
-function isElementAtTop(el: HTMLElement) {
-  const rect = el.getBoundingClientRect();
-  return rect.top <= 0 && window.scrollY === 0;
-}
-
-export { isElementInViewport, isElementAtTop };
+export { isElementInViewport };

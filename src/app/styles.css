@@ -16,7 +16,17 @@ h1 {
     radial-gradient(at 0% 0%, hsla(343, 0%, 0%, 1) 0px, transparent 50%);
 }
 
-.contact-bg {
+.projects-bg {
+  background-color: hsla(0, 0%, 0%, 1);
+  background-image: radial-gradient(
+      at 100% 48%,
+      hsla(231, 100%, 70%, 0.29) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 0%, hsla(343, 0%, 0%, 1) 0px, transparent 50%);
+}
+
+.skills-bg {
   background-color: hsla(0, 0%, 0%, 1);
   background-image: radial-gradient(
       at 0% 53%,
@@ -30,16 +40,6 @@ h1 {
   background-color: hsla(0, 0%, 0%, 1);
   background-image: radial-gradient(
       at 81% 18%,
-      hsla(231, 100%, 70%, 0.29) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 0% 0%, hsla(343, 0%, 0%, 1) 0px, transparent 50%);
-}
-
-.projects-bg {
-  background-color: hsla(0, 0%, 0%, 1);
-  background-image: radial-gradient(
-      at 100% 48%,
       hsla(231, 100%, 70%, 0.29) 0px,
       transparent 50%
     ),

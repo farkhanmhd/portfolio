@@ -31,8 +31,8 @@ export default function About() {
     >
       <div id="about-content" className="z-[990] mt-10 md:mt-0">
         <SectionHeader title="About me" subtitle="" />
-        <div className="mx-auto flex h-full w-[80%] flex-col items-center justify-between gap-20 md:flex-row">
-          <div className="order-2 flex-1 text-justify text-lg uppercase leading-relaxed md:order-1 md:text-start md:text-2xl">
+        <div className="mx-auto flex h-full w-[80%] flex-col justify-between gap-5 md:flex-row md:gap-20">
+          <div className="order-2 flex-1 text-sm uppercase leading-relaxed md:order-1 md:text-start md:text-2xl">
             <TextGenerateEffect words={words} />
           </div>
           <div className="order-1 flex max-h-[400px] flex-1 items-center justify-center md:order-2">

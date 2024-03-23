@@ -29,16 +29,19 @@ export default function Projects() {
       title: "SocialHub",
       link: "https://social-hub-farkhan.vercel.app",
       thumbnail: "/Images/socialhub.png",
+      subtitle: "A clone of threads by instagram",
     },
     {
       title: "TrailerHub",
       link: "https://trailer-hub-farkhan.vercel.app",
       thumbnail: "/Images/trailerhub.png",
+      subtitle: "A clone of Netflix but only Trailers",
     },
     {
       title: "NotesApp",
       link: "https://notes-app-farkhan.vercel.app/",
       thumbnail: "/Images/notes-app.png",
+      subtitle: "A simple note taking app",
     },
   ];
 
