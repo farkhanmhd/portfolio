@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   motion,
   AnimatePresence,
@@ -25,6 +25,21 @@ export const FloatingNav = ({
   const pathname = usePathname();
 
   const [visible, setVisible] = useState(false);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -58,7 +73,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          `fixed inset-x-0 z-[5000] mx-auto flex max-w-fit items-center justify-center gap-x-12 rounded-full border border-white bg-black/70 p-5 px-8 py-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] backdrop-blur-md ${window.innerWidth >= 640 ? "top-10" : "bottom-5"}`,
+          `fixed inset-x-0 z-[5000] mx-auto flex max-w-fit items-center justify-center gap-x-12 rounded-full border border-white bg-black/70 p-5 px-8 py-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] backdrop-blur-md ${windowWidth >= 640 ? "top-10" : "bottom-5"}`,
           className,
         )}
       >
