@@ -83,14 +83,14 @@
   }
 }
 
-.element::-webkit-scrollbar {
+.hide-scroll::-webkit-scrollbar {
   display: none;
 }
 
-.element {
+.hide-scroll {
   scrollbar-width: none;
 }
 
-.element {
+.hide-scroll {
   -ms-overflow-style: none;
 }

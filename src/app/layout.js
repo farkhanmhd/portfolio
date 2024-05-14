@@ -14,10 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="overflow-x-hidden bg-white font-medium uppercase antialiased">
+      <body className="hide-scroll overflow-x-hidden bg-white font-medium uppercase antialiased">
         <Provider>
-          {/* <Firstload />
-          <Preload /> */}
+          <Firstload />
+          <Preload />
           <Header />
           <MenuButton />
           {children}

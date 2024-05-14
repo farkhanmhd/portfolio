@@ -54,12 +54,13 @@ const Firstload = () => {
       >
         <div className="text-md fixed left-1/2 top-1/2 h-[40px] w-[80vw] -translate-x-1/2 -translate-y-1/2 overflow-hidden text-center uppercase md:text-lg lg:h-[70px] xl:h-[100px] xl:text-xl">
           <p id="full-name" className="relative">
-            {'farkhan muhammad'.split('').map((letter, index) => (
-              <span
-                key={index}
-                className="letter opacity-1 mr-[3px] inline-block md:mr-5"
-              >
-                {letter}
+            {'farkhan muhammad'.split(' ').map((word, index) => (
+              <span key={index} className="mr-[3px] inline-block md:mr-9">
+                {word.split('').map((letter, index) => (
+                  <span key={index} className="letter opacity-1 inline-block">
+                    {letter}
+                  </span>
+                ))}
               </span>
             ))}
           </p>
