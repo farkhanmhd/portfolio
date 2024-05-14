@@ -3,6 +3,7 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
+import { isMobile } from '../utils/isMobile';
 
 const About = () => {
   const aboutText =
@@ -20,13 +21,43 @@ const About = () => {
         end: 'bottom center',
       },
     });
+
+    gsap.from('#section-one', {
+      x: -100,
+      opacity: 0,
+      ease: 'power3',
+      scrollTrigger: {
+        trigger: '#about',
+        scrub: 1,
+        start: 'top bottom',
+        end: 'center bottom',
+      },
+    });
+
+    gsap.to('#section-one', {
+      x: -100,
+      opacity: 0,
+      ease: 'power3',
+      scrollTrigger: {
+        trigger: isMobile() ? '#about' : '#about-text',
+        scrub: 1,
+        start: 'top top',
+        end: 'top top',
+      },
+    });
   });
 
   return (
     <section
       id="about"
-      className="mb-10 flex min-h-[100dvh] w-screen items-center justify-end px-8 md:mb-0 md:px-24"
+      className="flex w-screen flex-col items-center justify-between px-8 py-20 md:flex-row md:px-24"
     >
+      <span
+        id="section-one"
+        className="mt-3 self-start text-[20px] duration-500"
+      >
+        01/
+      </span>
       <h2
         id="about-text"
         className="flex w-full flex-wrap text-[36px] md:w-3/4 md:text-lg"

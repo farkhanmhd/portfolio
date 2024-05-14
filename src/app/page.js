@@ -6,7 +6,7 @@ export default function Home() {
     <main className="hide-scroll">
       <Hero />
       <About />
-      <div className="h-screen w-full">text</div>
+      <div className="h-[100dvh]"></div>
     </main>
   );
 }

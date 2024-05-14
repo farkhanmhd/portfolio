@@ -8,12 +8,13 @@ import { firstLoadAtom } from '../states/atom';
 import DownArrow from './DownArrow';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { isMobile } from '../utils/isMobile';
 
 const Hero = () => {
   const isFirstLoad = useAtomValue(firstLoadAtom);
 
   const [heroText, setHeroText] = useState(
-    window.innerWidth < 768
+    isMobile()
       ? 'DEDICATED FRONTEND DEVELOPER'
       : 'FRONTEND WEB DEVELOPER DEDICATED TO CRAFTING ENGAGING DIGITAL EXPERIENCES',
   );
@@ -36,54 +37,54 @@ const Hero = () => {
     };
   }, []);
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(ScrollToPlugin);
-    gsap.from('.line', {
-      yPercent: 100,
-      delay: isFirstLoad ? 7.5 : 2,
-      duration: 1,
-      ease: 'power3',
-      stagger: 0.1,
-    });
-    gsap.from('#current-status', {
-      yPercent: -100,
-      duration: 1,
-      ease: 'power3',
-      delay: isFirstLoad ? 8 : 3,
-    });
-    gsap.from('#down-arrow', {
-      yPercent: 100,
-      duration: 1,
-      ease: 'power3',
-      delay:
-        isFirstLoad && window.innerWidth < 768
-          ? 8.5
-          : isFirstLoad && window.innerWidth > 768
-            ? 9
-            : 3,
-    });
-    gsap.to('#down-arrow', {
-      rotate: 180,
-      scrollTrigger: {
-        trigger: '#hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1,
-      },
-    });
-  });
+  // useGSAP(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   gsap.registerPlugin(ScrollToPlugin);
+  //   gsap.from('.line', {
+  //     yPercent: 100,
+  //     delay: isFirstLoad ? 7 : 2,
+  //     duration: 1,
+  //     ease: 'power3',
+  //     stagger: 0.1,
+  //   });
+  //   gsap.from('#current-status', {
+  //     yPercent: -100,
+  //     duration: 1,
+  //     ease: 'power3',
+  //     delay: isFirstLoad ? 7.5 : 3,
+  //   });
+  //   gsap.from('#down-arrow', {
+  //     yPercent: 100,
+  //     duration: 1,
+  //     ease: 'power3',
+  //     delay:
+  //       isFirstLoad && window.innerWidth < 768
+  //         ? 7.5
+  //         : isFirstLoad && window.innerWidth > 768
+  //           ? 8
+  //           : 2,
+  //   });
+  //   gsap.to('#down-arrow', {
+  //     rotate: 180,
+  //     scrollTrigger: {
+  //       trigger: '#hero',
+  //       start: 'top top',
+  //       end: 'bottom top',
+  //       scrub: 1,
+  //     },
+  //   });
+  // });
 
   return (
     <section
-      className="relative flex h-[100dvh] w-screen flex-col justify-center overflow-hidden px-8 md:px-24"
+      className="relative flex h-[100dvh] w-screen flex-col justify-center overflow-hidden px-4 py-20 sm:px-8 md:px-24"
       id="hero"
     >
       {window.innerWidth > 768 && (
         <div className="absolute left-1/2 top-8 h-[60px] w-[200px] -translate-x-1/2 overflow-hidden text-center uppercase md:w-[300px]">
           <span
             id="current-status"
-            className="text-sm inline-block md:text-base"
+            className="inline-block text-sm md:text-base"
           >
             currently student at universitas mikroskil
           </span>
