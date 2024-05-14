@@ -41,7 +41,7 @@ const About = () => {
       scrollTrigger: {
         trigger: isMobile() ? '#about' : '#about-text',
         scrub: 1,
-        start: 'top top',
+        start: isMobile() ? '5% top' : 'top top',
         end: 'top top',
       },
     });
