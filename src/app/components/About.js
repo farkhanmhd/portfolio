@@ -7,7 +7,7 @@ import { isMobile } from '../utils/isMobile';
 
 const About = () => {
   const aboutText =
-    "I'm Farkhan Muhammad, a Frontend Web Developer currently studying at Universitas Mikroskil in Medan, Indonesia. My primary expertise lies in ReactJS, and I'm enthusiastic about crafting streamlined and user-friendly web interfaces. Embracing a commitment to continuous learning, I strive to stay at the forefront of industry trends, ensuring that I bring innovative solutions to the ever-evolving landscape of web development. Whether it's optimizing performance, collaborating on creative projects, or integrating the latest React features, I approach each task with passion and a dedication to delivering high-quality results. ";
+    "I'm Farkhan Muhammad, a Frontend Web Developer currently studying at Universitas Mikroskil in Medan, Indonesia. My primary expertise lies in ReactJS, and I'm enthusiastic about crafting streamlined and user-friendly web interfaces. Embracing a commitment to continuous learning, I strive to stay at the forefront of industry trends, ensuring that I bring innovative solutions to the ever-evolving landscape of web development. Whether it's optimizing performance, collaborating on creative projects, or integrating the latest React features, I approach each task with passion and a dedication to delivering high-quality results.";
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -50,7 +50,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="flex w-screen flex-col items-center justify-between px-8 py-20 md:flex-row md:px-24"
+      className="flex w-screen flex-col items-center justify-between px-4 py-20 sm:px-8 md:flex-row xl:px-24"
     >
       <span
         id="section-one"

@@ -37,47 +37,47 @@ const Hero = () => {
     };
   }, []);
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(ScrollToPlugin);
-    gsap.from('.line', {
-      yPercent: 100,
-      delay: isFirstLoad ? 7 : 2,
-      duration: 1,
-      ease: 'power3',
-      stagger: 0.1,
-    });
-    gsap.from('#current-status', {
-      yPercent: -100,
-      duration: 1,
-      ease: 'power3',
-      delay: isFirstLoad ? 7.5 : 3,
-    });
-    gsap.from('#down-arrow', {
-      yPercent: 100,
-      duration: 1,
-      ease: 'power3',
-      delay:
-        isFirstLoad && window.innerWidth < 768
-          ? 7.5
-          : isFirstLoad && window.innerWidth > 768
-            ? 8
-            : 2,
-    });
-    gsap.to('#down-arrow', {
-      rotate: 180,
-      scrollTrigger: {
-        trigger: '#hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1,
-      },
-    });
-  });
+  // useGSAP(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   gsap.registerPlugin(ScrollToPlugin);
+  //   gsap.from('.line', {
+  //     yPercent: 100,
+  //     delay: isFirstLoad ? 7 : 2,
+  //     duration: 1,
+  //     ease: 'power3',
+  //     stagger: 0.1,
+  //   });
+  //   gsap.from('#current-status', {
+  //     yPercent: -100,
+  //     duration: 1,
+  //     ease: 'power3',
+  //     delay: isFirstLoad ? 7.5 : 3,
+  //   });
+  //   gsap.from('#down-arrow', {
+  //     yPercent: 100,
+  //     duration: 1,
+  //     ease: 'power3',
+  //     delay:
+  //       isFirstLoad && window.innerWidth < 768
+  //         ? 7.5
+  //         : isFirstLoad && window.innerWidth > 768
+  //           ? 8
+  //           : 2,
+  //   });
+  //   gsap.to('#down-arrow', {
+  //     rotate: 180,
+  //     scrollTrigger: {
+  //       trigger: '#hero',
+  //       start: 'top top',
+  //       end: 'bottom top',
+  //       scrub: 1,
+  //     },
+  //   });
+  // });
 
   return (
     <section
-      className="relative flex h-[100dvh] w-screen flex-col justify-center overflow-hidden px-4 py-20 sm:px-8 md:px-24"
+      className="relative flex h-[100dvh] w-screen flex-col justify-center overflow-hidden px-4 py-20 sm:px-8 xl:px-24"
       id="hero"
     >
       {window.innerWidth > 768 && (

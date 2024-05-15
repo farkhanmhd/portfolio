@@ -3,7 +3,7 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
-import { isMobile } from '../utils/isMobile';
+import { isMobile, isTablet } from '../utils/isMobile';
 import { projects } from '../utils/projects';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -65,8 +65,8 @@ const Projects = () => {
         scrollTrigger: {
           trigger: `.project-title-${i}`,
           scrub: 1,
-          start: 'center bottom',
-          end: 'bottom center',
+          start: isTablet() || isMobile() ? 'top bottom' : 'center bottom',
+          end: isTablet() || isMobile() ? 'bottom bottom' : 'bottom center',
         },
       });
 
@@ -75,8 +75,8 @@ const Projects = () => {
         scrollTrigger: {
           trigger: `.project-title-${i}`,
           scrub: 1,
-          start: 'center bottom',
-          end: 'bottom center',
+          start: isTablet() || isMobile() ? 'top bottom' : 'center bottom',
+          end: isTablet() || isMobile() ? 'bottom bottom' : 'bottom center',
         },
       });
     }
@@ -84,7 +84,7 @@ const Projects = () => {
   return (
     <section
       id="projects-section"
-      className="  min-h-[100dvh]  w-screen px-8 py-20 text-[20px] md:px-24"
+      className="  min-h-[100dvh]  w-screen px-4 py-20 text-[20px] sm:px-8 xl:px-24"
     >
       <div
         id="section-header"
@@ -102,7 +102,7 @@ const Projects = () => {
             className="project flex h-full w-full flex-col justify-between gap-x-10 gap-y-10 xl:flex-row"
           >
             <div className="project-detail w-full xl:w-[40%]">
-              <p className=" flex flex-wrap text-[56px] xl:text-[144px]">
+              <p className="project-detail-title flex flex-wrap text-[56px] xl:text-[144px]">
                 {project.title.split(' ').map((word, index) => (
                   <div
                     key={index}
