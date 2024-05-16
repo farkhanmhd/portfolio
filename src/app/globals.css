@@ -89,8 +89,33 @@
 
 .hide-scroll {
   scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.hide-scroll {
-  -ms-overflow-style: none;
+.sidebar-list {
+  position: relative;
+  font-size: 56px;
+}
+
+.sidebar-list:hover {
+  cursor: pointer;
+}
+
+.sidebar-list::before {
+  content: '•'; /* Custom marker */
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  font-size: 40px;
+  transition: 200ms;
+}
+
+.sidebar-list:hover::before {
+  transform: translateY(-50%) scale(1);
+}
+
+.sidebar-text:hover ~ .sidebar-text-underline,
+.sidebar-link:hover .link-text-underline {
+  width: 100%;
 }

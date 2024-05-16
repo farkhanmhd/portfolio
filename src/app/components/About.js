@@ -3,7 +3,6 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
-import { isMobile } from '../utils/isMobile';
 
 const About = () => {
   const aboutText =
@@ -15,7 +14,7 @@ const About = () => {
       color: 'black',
       stagger: 1.5,
       scrollTrigger: {
-        trigger: '#about',
+        trigger: '#about-section',
         scrub: 1,
         start: 'top center',
         end: 'bottom center',
@@ -27,10 +26,10 @@ const About = () => {
       opacity: 0,
       ease: 'power3',
       scrollTrigger: {
-        trigger: '#about',
+        trigger: '#about-section',
         scrub: 1,
         start: 'top bottom',
-        end: 'center bottom',
+        end: 'top 90%',
       },
     });
 
@@ -39,9 +38,9 @@ const About = () => {
       opacity: 0,
       ease: 'power3',
       scrollTrigger: {
-        trigger: isMobile() ? '#about' : '#about-text',
+        trigger: '#about-section',
         scrub: 1,
-        start: isMobile() ? '5% top' : 'top top',
+        start: 'top top',
         end: 'top top',
       },
     });
@@ -49,7 +48,7 @@ const About = () => {
 
   return (
     <section
-      id="about"
+      id="about-section"
       className="flex w-screen flex-col items-center justify-between px-4 py-20 sm:px-8 md:flex-row xl:px-24"
     >
       <span

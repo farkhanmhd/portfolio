@@ -3,16 +3,12 @@
 import { useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { useAtomValue } from 'jotai';
-import { firstLoadAtom } from '../states/atom';
 import DownArrow from './DownArrow';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { isMobile } from '../utils/isMobile';
 
 const Hero = () => {
-  const isFirstLoad = useAtomValue(firstLoadAtom);
-
   const [heroText, setHeroText] = useState(
     isMobile()
       ? 'DEDICATED FRONTEND DEVELOPER'
@@ -21,7 +17,7 @@ const Hero = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (isMobile()) {
         setHeroText('DEDICATED FRONTEND DEVELOPER');
       } else {
         setHeroText(
@@ -37,43 +33,38 @@ const Hero = () => {
     };
   }, []);
 
-  // useGSAP(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-  //   gsap.registerPlugin(ScrollToPlugin);
-  //   gsap.from('.line', {
-  //     yPercent: 100,
-  //     delay: isFirstLoad ? 7 : 2,
-  //     duration: 1,
-  //     ease: 'power3',
-  //     stagger: 0.1,
-  //   });
-  //   gsap.from('#current-status', {
-  //     yPercent: -100,
-  //     duration: 1,
-  //     ease: 'power3',
-  //     delay: isFirstLoad ? 7.5 : 3,
-  //   });
-  //   gsap.from('#down-arrow', {
-  //     yPercent: 100,
-  //     duration: 1,
-  //     ease: 'power3',
-  //     delay:
-  //       isFirstLoad && window.innerWidth < 768
-  //         ? 7.5
-  //         : isFirstLoad && window.innerWidth > 768
-  //           ? 8
-  //           : 2,
-  //   });
-  //   gsap.to('#down-arrow', {
-  //     rotate: 180,
-  //     scrollTrigger: {
-  //       trigger: '#hero',
-  //       start: 'top top',
-  //       end: 'bottom top',
-  //       scrub: 1,
-  //     },
-  //   });
-  // });
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
+    gsap.from('.line', {
+      yPercent: 100,
+      delay: 7,
+      duration: 1,
+      ease: 'power3',
+      stagger: 0.1,
+    });
+    gsap.from('#current-status', {
+      yPercent: -100,
+      duration: 1,
+      ease: 'power3',
+      delay: 7.5,
+    });
+    gsap.from('#down-arrow', {
+      yPercent: 100,
+      duration: 1,
+      ease: 'power3',
+      delay: isMobile() ? 7.5 : 8,
+    });
+    gsap.to('#down-arrow', {
+      rotate: 180,
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+      },
+    });
+  });
 
   return (
     <section
@@ -112,7 +103,7 @@ const Hero = () => {
               duration: 2.5,
               ease: 'power3.inOut',
               scrollTo: {
-                y: '#about',
+                y: '#about-section',
               },
             })
           }

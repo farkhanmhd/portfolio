@@ -4,6 +4,9 @@ import Header from './components/Header';
 import MenuButton from './components/MenuButton';
 import Firstload from './components/Firstload';
 import Preload from './components/Preload';
+import SidebarOverlay from './components/SidebarOverlay';
+import Sidebar from './components/Sidebar';
+import ScrollSmooth from './components/ScrollSmooth';
 
 export const metadata = {
   title: "Farkhan's Portfolio",
@@ -16,11 +19,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="hide-scroll overflow-x-hidden bg-white font-medium uppercase antialiased">
         <Provider>
-          {/* <Firstload />
-          <Preload /> */}
-          <Header />
-          <MenuButton />
-          {children}
+          <ScrollSmooth>
+            <Firstload />
+            <Preload />
+            <Header />
+            <MenuButton />
+            <SidebarOverlay />
+            <Sidebar />
+            {children}
+          </ScrollSmooth>
         </Provider>
       </body>
     </html>

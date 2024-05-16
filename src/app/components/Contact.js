@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import Link from 'next/link';
-import { isMobile } from '../utils/isMobile';
 
 const Contact = () => {
   const email = 'farkhanmuhammad@outlook.com';
@@ -45,11 +44,22 @@ const Contact = () => {
         end: 'bottom bottom',
       },
     });
+
+    gsap.from('.footer-text', {
+      yPercent: 100,
+      ease: 'power3',
+      scrollTrigger: {
+        trigger: '#contact-section',
+        scrub: 1,
+        start: '95% bottom',
+        end: 'bottom bottom',
+      },
+    });
   });
   return (
     <footer
       id="contact-section"
-      className="flex h-[100dvh] w-screen flex-col justify-between px-4 pb-5 pt-20 text-[20px] sm:px-8 xl:px-24"
+      className="flex h-[80dvh] w-screen flex-col justify-between px-4 pb-5 pt-20 text-[20px] sm:px-8 md:h-[60dvh] xl:h-[100dvh] xl:px-24"
     >
       <div
         id="section-header"
@@ -89,19 +99,45 @@ const Contact = () => {
       </Link>
       <div
         id="section-footer"
-        className="flex flex-col justify-between gap-y-10 lg:flex-row"
+        className="flex flex-col justify-between gap-y-10 pb-10 lg:flex-row"
       >
-        <div className="footer-name capitalize">
-          <div>farkhan muhammad</div>
-          <div>frontend developer</div>
+        <div className="capitalize">
+          <div className="footer-name">
+            <div className="overflow-hidden">
+              <span className="footer-text block">farkhan muhammad</span>
+            </div>
+            <div className="overflow-hidden">
+              <span className="footer-text block">frontend developer</span>
+            </div>
+          </div>
         </div>
-        <div className="footer-social flex gap-x-10">
-          <Link href="https://www.linkedin.com/in/farkhanmhd/">linkedin</Link>
-          <Link href="https://instagram.com/farkhanmhd">instagram</Link>
+        <div className=" overflow-hidden">
+          <div className="footer-social flex gap-x-10">
+            <div className="overflow-hidden">
+              <Link
+                className="footer-text block"
+                href="https://www.linkedin.com/in/farkhanmhd/"
+              >
+                linkedin
+              </Link>
+            </div>
+            <div className="overflow-hidden">
+              <Link
+                className="footer-text block"
+                href="https://instagram.com/farkhanmhd"
+              >
+                instagram
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="footer-design-by">
-          <span>Design by </span>
-          <Link href="https://designraver.com/">Design Raver</Link>
+        <div className="overflow-hidden">
+          <div className="footer-design-by overflow-hidden">
+            <div className="footer-text">
+              <span>Design by </span>
+              <Link href="https://designraver.com/">Design Raver</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

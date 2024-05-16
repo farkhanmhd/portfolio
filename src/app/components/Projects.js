@@ -65,8 +65,8 @@ const Projects = () => {
         scrollTrigger: {
           trigger: `.project-title-${i}`,
           scrub: 1,
-          start: isTablet() || isMobile() ? 'top bottom' : 'center bottom',
-          end: isTablet() || isMobile() ? 'bottom bottom' : 'bottom center',
+          start: isTablet() ? 'top bottom' : 'center bottom',
+          end: isTablet() ? 'bottom bottom' : 'bottom center',
         },
       });
 
@@ -75,8 +75,8 @@ const Projects = () => {
         scrollTrigger: {
           trigger: `.project-title-${i}`,
           scrub: 1,
-          start: isTablet() || isMobile() ? 'top bottom' : 'center bottom',
-          end: isTablet() || isMobile() ? 'bottom bottom' : 'bottom center',
+          start: isTablet() ? 'top bottom' : 'center bottom',
+          end: isTablet() ? 'bottom bottom' : 'bottom center',
         },
       });
     }
@@ -106,7 +106,7 @@ const Projects = () => {
                 {project.title.split(' ').map((word, index) => (
                   <div
                     key={index}
-                    className="mr-5 inline-block overflow-hidden"
+                    className="relative mr-5 inline-block overflow-hidden"
                   >
                     <span className={`project-title-${i} inline-block`}>
                       {word}
