@@ -71,7 +71,7 @@ const Hero = () => {
       className="relative flex h-[100dvh] w-screen flex-col justify-center overflow-hidden px-4 py-20 sm:px-8 xl:px-24"
       id="hero"
     >
-      {window.innerWidth > 768 && (
+      {!isMobile() && (
         <div className="absolute left-1/2 top-8 h-[60px] w-[200px] -translate-x-1/2 overflow-hidden text-center uppercase md:w-[300px]">
           <span
             id="current-status"

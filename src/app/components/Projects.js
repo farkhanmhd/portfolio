@@ -102,7 +102,7 @@ const Projects = () => {
             className="project flex h-full w-full flex-col justify-between gap-x-10 gap-y-10 xl:flex-row"
           >
             <div className="project-detail w-full xl:w-[40%]">
-              <p className="project-detail-title flex flex-wrap text-[56px] xl:text-[144px]">
+              <div className="project-detail-title flex flex-wrap text-[56px] xl:text-[144px]">
                 {project.title.split(' ').map((word, index) => (
                   <div
                     key={index}
@@ -113,8 +113,8 @@ const Projects = () => {
                     </span>
                   </div>
                 ))}
-              </p>
-              <p className="project-description">
+              </div>
+              <div className="project-description">
                 {project.description.split(' ').map((word, index) => (
                   <div
                     key={index}
@@ -125,7 +125,7 @@ const Projects = () => {
                     </span>
                   </div>
                 ))}
-              </p>
+              </div>
             </div>
             <div className="project-picture relative z-[10] h-[50vh] w-full overflow-hidden xl:mt-14 xl:h-[110vh] xl:w-3/6">
               <Link
