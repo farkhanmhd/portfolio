@@ -84,7 +84,7 @@ const Hero = () => {
       <div className="title overflow-hidden">
         <h1
           id="hero-text"
-          className="text-lg font-bold leading-tight md:text-xl"
+          className="block text-lg font-bold leading-tight md:text-xl"
         >
           {heroText.split(' ').map((word, index) => (
             <div key={index} className="mr-5 inline-block overflow-hidden">

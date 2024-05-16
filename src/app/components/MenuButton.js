@@ -12,10 +12,10 @@ const MenuButton = () => {
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       <div
-        class={`h-[2px] w-6 bg-black duration-300 ${isMenuOpen && 'origin-top-left  -translate-y-[3px] translate-x-[4px] rotate-45'}`}
+        className={`h-[2px] w-6 bg-black duration-300 ${isMenuOpen && 'origin-top-left  -translate-y-[3px] translate-x-[4px] rotate-45'}`}
       />
       <div
-        class={`h-[2px] w-6 bg-black duration-300 ${isMenuOpen && 'origin-top-left translate-x-[2px] translate-y-[4px] -rotate-45'}`}
+        className={`h-[2px] w-6 bg-black duration-300 ${isMenuOpen && 'origin-top-left translate-x-[2px] translate-y-[4px] -rotate-45'}`}
       />
     </button>
   );

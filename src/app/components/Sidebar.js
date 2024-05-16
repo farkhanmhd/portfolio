@@ -6,36 +6,25 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import SidebarList from './SidebarList';
 import Link from 'next/link';
+import { openSidebar, closeSidebar } from '../utils/sidebar';
 
 const Sidebar = () => {
   const [menuOpen, setMenuOpen] = useAtom(menuAtom);
-  const openSidebar = () => {
-    gsap.to('#sidebar-menu', {
-      xPercent: 0,
-      duration: 1,
-      display: 'block',
-      ease: 'power3.inOut',
-    });
-
+  const open = () => {
+    openSidebar();
     setMenuOpen(true);
   };
 
-  const closeSidebar = () => {
-    gsap.to('#sidebar-menu', {
-      xPercent: 100,
-      duration: 1,
-      display: 'none',
-      ease: 'power3.inOut',
-    });
-
+  const close = () => {
+    closeSidebar();
     setMenuOpen(false);
   };
 
   useGSAP(() => {
     if (menuOpen) {
-      openSidebar();
+      open();
     } else {
-      closeSidebar();
+      close();
     }
   }, [menuOpen]);
 
@@ -62,12 +51,12 @@ const Sidebar = () => {
   return (
     <aside
       id="sidebar-menu"
-      class="fixed right-0 z-[999] hidden h-[100dvh] w-screen  bg-black text-white hover:cursor-default lg:w-5/12 lg:max-w-[672px]"
+      className="fixed right-[-50%] z-[999] h-[100dvh] w-screen bg-black text-white hover:cursor-default lg:w-5/12 lg:max-w-[672px]"
     >
-      <div class="flex h-full w-full flex-col justify-between px-[100px] py-[50px] ">
-        <div class="mt-20 w-full">
-          <div class="mb-10">
-            <p class="text-[11px] underline">Navigation</p>
+      <div className="flex h-full w-full flex-col justify-between px-[100px] py-[50px] ">
+        <div className="mt-20 w-full">
+          <div className="mb-10">
+            <p className="text-[11px] underline">Navigation</p>
           </div>
           <ul className="mt-16 flex flex-col justify-center gap-y-5 font-normal  capitalize lg:justify-start">
             {sidebarListText.map(({ text, target }, i) => (
@@ -76,11 +65,11 @@ const Sidebar = () => {
           </ul>
         </div>
         <div>
-          <p class=" mb-5 text-sm">Get in Touch</p>
-          <div class="flex gap-x-8 capitalize">
+          <p className=" mb-5 text-sm">Get in Touch</p>
+          <div className="flex gap-x-8 capitalize">
             <Link
               href="https://www.linkedin.com/in/farkhanmhd/"
-              class="sidebar-link text-base"
+              className="sidebar-link text-base"
             >
               <div className="link-text-container relative max-w-max">
                 <span className="link-text">LinkedIn</span>
@@ -89,7 +78,7 @@ const Sidebar = () => {
             </Link>
             <Link
               href="https://instagram.com/farkhanmhd"
-              class="sidebar-link text-base"
+              className="sidebar-link text-base"
             >
               <div className="link-text-container relative max-w-max">
                 <span className="link-text">Instagram</span>
