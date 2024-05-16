@@ -4,7 +4,7 @@ This is the repository for my personal web portfolio. You can visit the live ver
 
 ## Overview
 
-This web portfolio showcases my projects, skills, and experiences. It is built using Next.js framework with Tailwind CSS for styling and Lenis for animations. State management is handled with Jotai, and animations are implemented using GSAP.
+This web portfolio showcases my projects, skills, and experiences. It is built using Next.js framework with Tailwind CSS for styling and Lenis for smooth scroll. State management is handled with Jotai, and animations are implemented using GSAP.
 
 ## Technologies Used
 
