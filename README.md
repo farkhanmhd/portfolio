@@ -18,7 +18,7 @@ This web portfolio showcases my projects, skills, and experiences. It is built u
 
 To run this project locally, follow these steps:
 
-1. Clone this repository: `git clone <repository-url>`
+1. Clone this repository
 2. Navigate into the project directory: `cd web-portfolio`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm run dev`
