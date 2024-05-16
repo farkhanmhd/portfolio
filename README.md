@@ -1,4 +1,4 @@
-# Web Portfolio
+# Farkhan's Portfolio
 
 This is the repository for my personal web portfolio. You can visit the live version [here](https://farkhanmhd.vercel.app/).
 
