@@ -24,7 +24,3 @@ To run this project locally, follow these steps:
 4. Start the development server: `npm run dev`
 
 The development server should now be running at `http://localhost:3000`.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
