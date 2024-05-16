@@ -99,9 +99,9 @@ const Projects = () => {
         {projects.map((project, i) => (
           <div
             key={i}
-            className="project flex h-full w-full flex-col justify-between gap-x-10 gap-y-10 xl:flex-row"
+            className="project flex h-full w-full flex-col justify-between gap-x-10 gap-y-10 2xl:flex-row"
           >
-            <div className="project-detail w-full xl:w-[40%]">
+            <div className="project-detail w-full 2xl:w-[40%]">
               <div className="project-detail-title flex flex-wrap text-[56px] xl:text-[144px]">
                 {project.title.split(' ').map((word, index) => (
                   <div
@@ -127,7 +127,7 @@ const Projects = () => {
                 ))}
               </div>
             </div>
-            <div className="project-picture relative z-[10] h-[50vh] w-full overflow-hidden xl:mt-14 xl:h-[110vh] xl:w-3/6">
+            <div className="project-picture relative z-[10] h-[50vh] w-full overflow-hidden xl:mt-14 xl:h-[110vh] 2xl:w-3/6">
               <Link
                 href={project.url}
                 className="duration-300 hover:brightness-50"

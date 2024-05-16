@@ -59,7 +59,7 @@ const Contact = () => {
   return (
     <footer
       id="contact-section"
-      className="flex h-[80dvh] w-screen flex-col justify-between px-4 pb-5 pt-20 text-[20px] sm:px-8 md:h-[60dvh] xl:h-[100dvh] xl:px-24"
+      className="flex h-[80dvh] w-screen flex-col justify-between px-4 pb-5 pt-20 text-[20px] sm:px-8 md:h-[90dvh] lg:h-[80dvh] xl:h-[100dvh] xl:px-24"
     >
       <div
         id="section-header"
@@ -72,25 +72,20 @@ const Contact = () => {
       </div>
       <Link
         href="mailto:farkhanmuhammad@outlook.com"
-        className="relative text-[30px] md:text-[80px] xl:text-[144px]"
+        className="relative text-[30px] md:text-[50px] lg:text-[80px] xl:text-[100px] 2xl:text-[130px]"
       >
         <div className="email-text relative inline-block overflow-y-hidden pr-2">
           {username.split('').map((letter, index) => (
-            <span
-              key={index}
-              className="email-letter inline-block lg:-mr-1 xl:-mr-2"
-            >
+            <span key={index} className="email-letter inline-block">
               {letter}
             </span>
           ))}
           <div className="email-underline absolute bottom-0 left-0 h-1 w-full origin-left bg-black lg:h-2" />
         </div>
+        <br />
         <div className="email-text relative inline-block overflow-y-hidden pr-2">
           {`@${domain}`.split('').map((letter, index) => (
-            <span
-              key={index}
-              className="email-letter inline-block lg:-mr-1 xl:-mr-2"
-            >
+            <span key={index} className="email-letter inline-block ">
               {letter}
             </span>
           ))}
