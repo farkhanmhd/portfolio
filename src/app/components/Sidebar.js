@@ -51,7 +51,7 @@ const Sidebar = () => {
   return (
     <aside
       id="sidebar-menu"
-      className="fixed right-[-50%] z-[999] h-[100dvh] w-screen bg-black text-white hover:cursor-default lg:w-5/12 lg:max-w-[672px]"
+      className="fixed right-[-100%] z-[999] hidden h-[100dvh] w-screen bg-black text-white hover:cursor-default lg:w-5/12 lg:max-w-[672px]"
     >
       <div className="flex h-full w-full flex-col justify-between px-[100px] py-[50px] ">
         <div className="mt-20 w-full">

@@ -19,7 +19,7 @@ const closeSidebar = () => {
     right: '-100%',
     duration: 1,
     ease: 'power3.inOut',
-    display: 'hidden',
+    display: 'none',
   });
 
   gsap.to('#sidebar-overlay', {
