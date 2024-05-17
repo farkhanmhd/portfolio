@@ -25,11 +25,13 @@ const Sidebar = () => {
       open();
       gsap.to('#cursor', {
         zIndex: 1000,
+        duration: 0,
       });
     } else {
       close();
       gsap.to('#cursor', {
-        zIndex: 0,
+        zIndex: 999,
+        duration: 0,
       });
     }
   }, [menuOpen]);

@@ -10,13 +10,21 @@ const SidebarOverlay = () => {
   const [menuOpen, setMenuOpen] = useAtom(menuAtom);
 
   const open = () => {
-    openSidebar();
     setMenuOpen(true);
+    openSidebar();
+    gsap.to('#cursor', {
+      zIndex: 1000,
+      duration: 0,
+    });
   };
 
   const close = () => {
-    closeSidebar();
     setMenuOpen(false);
+    closeSidebar();
+    gsap.to('#cursor', {
+      zIndex: 999,
+      duration: 0,
+    });
   };
 
   useGSAP(() => {

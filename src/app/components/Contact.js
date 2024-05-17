@@ -72,7 +72,7 @@ const Contact = () => {
       </div>
       <Link
         href="mailto:farkhanmuhammad@outlook.com"
-        className="relative text-[30px] md:text-[50px] lg:text-[80px] xl:text-[100px] 2xl:text-[130px]"
+        className="relative cursor-none text-[30px] md:text-[50px] lg:text-[80px] xl:text-[100px] 2xl:text-[130px]"
       >
         <div className="email-text relative inline-block overflow-y-hidden pr-2">
           {username.split('').map((letter, index) => (
