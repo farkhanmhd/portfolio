@@ -130,7 +130,7 @@ const Projects = () => {
             <div className="project-picture relative z-[10] h-[50vh] w-full overflow-hidden xl:mt-14 xl:h-[110vh] 2xl:w-3/6">
               <Link
                 href={project.url}
-                className="duration-300 hover:brightness-50"
+                className="cursor-none duration-300 hover:brightness-50"
                 target="_blank"
               >
                 <Image

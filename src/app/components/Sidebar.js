@@ -51,9 +51,9 @@ const Sidebar = () => {
   return (
     <aside
       id="sidebar-menu"
-      className="fixed right-[-100%] z-[999] hidden h-[100dvh] w-screen bg-black text-white hover:cursor-default lg:w-5/12 lg:max-w-[672px]"
+      className="fixed right-[-100%] z-[999] hidden h-[100dvh] w-screen cursor-none bg-black text-white hover:cursor-default lg:w-5/12 lg:max-w-[672px]"
     >
-      <div className="flex h-full w-full flex-col justify-between px-[100px] py-[50px] ">
+      <div className="flex h-full w-full cursor-none flex-col justify-between px-[100px] py-[50px] ">
         <div className="mt-20 w-full">
           <div className="mb-10">
             <p className="text-[11px] underline">Navigation</p>
@@ -69,7 +69,7 @@ const Sidebar = () => {
           <div className="flex gap-x-8 capitalize">
             <Link
               href="https://www.linkedin.com/in/farkhanmhd/"
-              className="sidebar-link text-base"
+              className="sidebar-link cursor-none text-base"
             >
               <div className="link-text-container relative max-w-max">
                 <span className="link-text">LinkedIn</span>
@@ -78,7 +78,7 @@ const Sidebar = () => {
             </Link>
             <Link
               href="https://instagram.com/farkhanmhd"
-              className="sidebar-link text-base"
+              className="sidebar-link cursor-none text-base"
             >
               <div className="link-text-container relative max-w-max">
                 <span className="link-text">Instagram</span>

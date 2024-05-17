@@ -10,7 +10,7 @@ const openSidebar = () => {
 
   gsap.to('#sidebar-overlay', {
     display: 'block',
-    opacity: 1,
+    opacity: 0.5,
   });
 };
 

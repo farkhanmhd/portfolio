@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import DownArrow from './DownArrow';
@@ -34,27 +34,26 @@ const Hero = () => {
   }, []);
 
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(ScrollToPlugin);
-    gsap.from('.line', {
-      yPercent: 100,
-      delay: 7,
-      duration: 1,
-      ease: 'power3',
-      stagger: 0.1,
-    });
-    gsap.from('#current-status', {
-      yPercent: -100,
-      duration: 1,
-      ease: 'power3',
-      delay: 7.5,
-    });
-    gsap.from('#down-arrow', {
-      yPercent: 100,
-      duration: 1,
-      ease: 'power3',
-      delay: isMobile() ? 7.5 : 8,
-    });
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    // gsap.from('.line', {
+    //   yPercent: 100,
+    //   delay: 7,
+    //   duration: 1,
+    //   ease: 'power3',
+    //   stagger: 0.1,
+    // });
+    // gsap.from('#current-status', {
+    //   yPercent: -100,
+    //   duration: 1,
+    //   ease: 'power3',
+    //   delay: 7.5,
+    // });
+    // gsap.from('#down-arrow', {
+    //   yPercent: 100,
+    //   duration: 1,
+    //   ease: 'power3',
+    //   delay: isMobile() ? 7.5 : 8,
+    // });
     gsap.to('#down-arrow', {
       rotate: 180,
       scrollTrigger: {
@@ -81,13 +80,20 @@ const Hero = () => {
           </span>
         </div>
       )}
-      <div className="title overflow-hidden">
+      <div
+        className="title bg-black mix-blend-difference"
+        onMouseEnter={() => gsap.to('#cursor', { scale: 10 })}
+        onMouseLeave={() => gsap.to('#cursor', { scale: 1 })}
+      >
         <h1
           id="hero-text"
           className="block text-lg font-bold leading-tight md:text-xl"
         >
           {heroText.split(' ').map((word, index) => (
-            <div key={index} className="mr-5 inline-block overflow-hidden">
+            <div
+              key={index}
+              className="mr-5 inline-block overflow-hidden text-white mix-blend-difference"
+            >
               <span className="line inline-block">{word}</span>
             </div>
           ))}
@@ -97,7 +103,7 @@ const Hero = () => {
         <button
           id="down-arrow"
           role="button"
-          className="h-full w-full"
+          className="h-full w-full cursor-none"
           onClick={() =>
             gsap.to(window, {
               duration: 2.5,

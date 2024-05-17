@@ -8,7 +8,7 @@ const MenuButton = () => {
   return (
     <button
       type="button"
-      className={`fixed bottom-8 right-4 z-[9999] flex h-[45px] w-[45px] flex-col items-center justify-evenly rounded-full bg-white py-2 mix-blend-difference duration-300 sm:right-8 xl:right-[81px]`}
+      className={`fixed bottom-8 right-4 z-[9999] flex h-[45px] w-[45px] cursor-none flex-col items-center justify-evenly rounded-full bg-white py-2 mix-blend-difference duration-300 sm:right-8 xl:right-[81px]`}
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       <div

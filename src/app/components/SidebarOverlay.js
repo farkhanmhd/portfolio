@@ -29,7 +29,7 @@ const SidebarOverlay = () => {
   return (
     <div
       id="sidebar-overlay"
-      className="fixed left-0 top-0 z-[999] h-screen w-screen bg-black/50 opacity-0 hover:cursor-pointer"
+      className="fixed left-0 top-0 z-[999] h-screen w-screen bg-black/50 opacity-0 "
       onClick={() => close()}
     />
   );

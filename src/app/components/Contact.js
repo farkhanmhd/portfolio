@@ -110,7 +110,7 @@ const Contact = () => {
           <div className="footer-social flex gap-x-10">
             <div className="overflow-hidden">
               <Link
-                className="footer-text block"
+                className="footer-text block cursor-none"
                 href="https://www.linkedin.com/in/farkhanmhd/"
               >
                 linkedin
@@ -118,7 +118,7 @@ const Contact = () => {
             </div>
             <div className="overflow-hidden">
               <Link
-                className="footer-text block"
+                className="footer-text block cursor-none"
                 href="https://instagram.com/farkhanmhd"
               >
                 instagram
@@ -130,7 +130,9 @@ const Contact = () => {
           <div className="footer-design-by overflow-hidden">
             <div className="footer-text">
               <span>Design by </span>
-              <Link href="https://designraver.com/">Design Raver</Link>
+              <Link href="https://designraver.com/" className="cursor-none">
+                Design Raver
+              </Link>
             </div>
           </div>
         </div>

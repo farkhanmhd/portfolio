@@ -24,7 +24,10 @@ const SidebarList = ({ text, target }) => {
     }
   };
   return (
-    <li className="sidebar-list text-[56px]" onClick={handleButtonClick}>
+    <li
+      className="sidebar-list cursor-none text-[56px]"
+      onClick={handleButtonClick}
+    >
       <div className="sidebar-text-container relative max-w-max">
         <span className="sidebar-text">{text}</span>
         <div className="sidebar-text-underline absolute bottom-0 left-0 h-[2px] w-0 origin-left bg-white duration-300" />

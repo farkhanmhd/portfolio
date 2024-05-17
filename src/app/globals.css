@@ -99,10 +99,6 @@
   font-size: 56px;
 }
 
-.sidebar-list:hover {
-  cursor: pointer;
-}
-
 .sidebar-list::before {
   content: '•'; /* Custom marker */
   position: absolute;
