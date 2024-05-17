@@ -5,7 +5,7 @@ import Contact from './components/Contact';
 
 export default function Home() {
   return (
-    <main className="hide-scroll">
+    <main>
       <Hero />
       <About />
       <Projects />

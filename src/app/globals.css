@@ -83,13 +83,15 @@
   }
 }
 
-.hide-scroll::-webkit-scrollbar {
+/* safari */
+.hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-.hide-scroll {
-  scrollbar-width: none;
+/* chromium based */
+.hide-scrollbar {
   -ms-overflow-style: none;
+  scrollbar-width: 0;
 }
 
 .sidebar-list {
