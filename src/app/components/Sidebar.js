@@ -23,8 +23,14 @@ const Sidebar = () => {
   useGSAP(() => {
     if (menuOpen) {
       open();
+      gsap.to('#cursor', {
+        zIndex: 1000,
+      });
     } else {
       close();
+      gsap.to('#cursor', {
+        zIndex: 0,
+      });
     }
   }, [menuOpen]);
 
