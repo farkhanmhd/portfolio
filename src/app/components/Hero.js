@@ -35,25 +35,25 @@ const Hero = () => {
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-    // gsap.from('.line', {
-    //   yPercent: 100,
-    //   delay: 7,
-    //   duration: 1,
-    //   ease: 'power3',
-    //   stagger: 0.1,
-    // });
-    // gsap.from('#current-status', {
-    //   yPercent: -100,
-    //   duration: 1,
-    //   ease: 'power3',
-    //   delay: 7.5,
-    // });
-    // gsap.from('#down-arrow', {
-    //   yPercent: 100,
-    //   duration: 1,
-    //   ease: 'power3',
-    //   delay: isMobile() ? 7.5 : 8,
-    // });
+    gsap.from('.line', {
+      yPercent: 100,
+      delay: 7,
+      duration: 1,
+      ease: 'power3',
+      stagger: 0.1,
+    });
+    gsap.from('#current-status', {
+      yPercent: -100,
+      duration: 1,
+      ease: 'power3',
+      delay: 7.5,
+    });
+    gsap.from('#down-arrow', {
+      yPercent: 100,
+      duration: 1,
+      ease: 'power3',
+      delay: isMobile() ? 7.5 : 8,
+    });
     gsap.to('#down-arrow', {
       rotate: 180,
       scrollTrigger: {

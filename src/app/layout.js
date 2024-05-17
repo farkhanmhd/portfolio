@@ -22,8 +22,8 @@ export default function RootLayout({ children }) {
         <Provider>
           <ScrollSmooth>
             <Cursor />
-            {/* <Firstload />
-            <Preload /> */}
+            <Firstload />
+            <Preload />
             <Header />
             <MenuButton />
             <SidebarOverlay />
