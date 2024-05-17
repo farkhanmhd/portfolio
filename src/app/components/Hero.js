@@ -87,7 +87,7 @@ const Hero = () => {
       >
         <h1
           id="hero-text"
-          className="block text-lg font-bold leading-tight md:text-xl"
+          className="block text-lg font-bold leading-tight lg:text-[70px] xl:text-xl"
         >
           {heroText.split(' ').map((word, index) => (
             <div

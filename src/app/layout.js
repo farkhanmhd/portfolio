@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="hide-scrollbar cursor-none overflow-hidden bg-white font-medium uppercase antialiased">
+      <body className="hide-scrollbar cursor-none bg-white font-medium uppercase antialiased lg:overflow-hidden">
         <Provider>
           <ScrollSmooth>
             <Cursor />
