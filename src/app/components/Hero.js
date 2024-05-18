@@ -83,8 +83,6 @@ const Hero = () => {
       <div
         className="title bg-black mix-blend-difference"
         onMouseEnter={() => gsap.to('#cursor', { scale: 10, zIndex: 0 })}
-        onMouseOver={() => gsap.to('#cursor', { scale: 10, zIndex: 0 })}
-        onMouseMove={() => gsap.to('#cursor', { scale: 10, zIndex: 0 })}
         onMouseLeave={() => gsap.to('#cursor', { scale: 1, zIndex: 999 })}
       >
         <h1
