@@ -15,6 +15,8 @@ const Hero = () => {
       : 'FRONTEND WEB DEVELOPER DEDICATED TO CRAFTING ENGAGING DIGITAL EXPERIENCES',
   );
 
+  const titleRef = useRef(null);
+
   useEffect(() => {
     const handleResize = () => {
       if (isMobile()) {
@@ -63,6 +65,13 @@ const Hero = () => {
         scrub: 1,
       },
     });
+
+    titleRef.current.addEventListener('mouseenter', () => {
+      gsap.to('#cursor', { scale: 10, zIndex: 0 });
+    });
+    titleRef.current.addEventListener('mouseleave', () => {
+      gsap.to('#cursor', { scale: 1, zIndex: 999 });
+    });
   });
 
   return (
@@ -80,11 +89,7 @@ const Hero = () => {
           </span>
         </div>
       )}
-      <div
-        className="title bg-black mix-blend-difference"
-        onMouseEnter={() => gsap.to('#cursor', { scale: 10, zIndex: 0 })}
-        onMouseLeave={() => gsap.to('#cursor', { scale: 1, zIndex: 999 })}
-      >
+      <div className="title bg-black mix-blend-difference" ref={titleRef}>
         <h1
           id="hero-text"
           className="block text-lg font-bold leading-tight lg:text-[70px] xl:text-xl"
